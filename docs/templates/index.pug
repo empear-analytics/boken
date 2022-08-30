@@ -1,0 +1,101 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style
+            | !{style}
+        title #{name}
+    body
+        //| !{gitHubBanner}
+        input(id="menu", type="checkbox")
+        label.menu-button(for="menu") ☰
+        label.menu-overlay(for="menu")
+        aside
+            .search-bar
+                input#search(type="search", placeholder="search")
+            ul.sections
+                each section in menu
+                    li
+                        label(id="toc-" + section.name, for="" + section.name) #{section.name}
+                        input(type="checkbox", id="" + section.name)
+                        ul.methods
+                            each member in section.members
+                                li.toc-entry(id="toc-" + member.index)
+                                    a(href="#" + member.index) #{member.signature}
+        main
+            h1 what
+            p A simple and flexible module that sets the styling of a webpage to resemble a sequence of A4 pages along with some
+              | convenience methods to add text figures and more.
+
+            h1 why
+            p Generating PDFs programmatically is a nightmare. Not anymore: with the book you can design for printing
+              | using HTML, CSS and Javascript.
+
+            h1 how
+            p You can create books in the browser for development and then print them manually or just generate the
+              |  pages in node and use a headless browser such as puppeteer to print it as PDF.
+
+            h1 use in browser
+            pre.install
+                code.hljs !{install.browser}
+
+            h1 API
+            each entry in api
+                 .card
+                     pre.title(id="" + entry.index) #{entry.signature}
+                     .desc.margined !{entry.desc}
+                     if entry.params
+                         h3 Parameters
+                         table.margined
+                             thead
+                                 tr
+                                     th.param-name Name
+                                     th.param-type Type
+                                     th.param-desc Description
+                             tbody
+                                 each param in entry.params
+                                     tr
+                                         td.param-name #{param.name}
+                                         td.param-type
+                                             each type in param.type
+                                                 code.type #{type}
+                                         td.param-desc !{param.desc}
+                     if entry.returns
+                         h3 Returns
+                         .returns.margined
+                             .return-type
+                                 each type in entry.returns.type
+                                     code.type #{type}
+                             .return-desc !{entry.returns.desc}
+                     if entry.throws
+                         h3 Throws
+                         .throws.margined
+                             each exception in entry.throws
+                                 .throws-entry
+                                     .throws-type
+                                         code.type #{exception.type}
+                                     .throws-desc !{exception.desc}
+                     if entry.examples
+                         h3 Examples
+                         pre
+                             code.example.hljs !{entry.examples}
+
+            script.
+                // List of entries.
+                const list = JSON.parse('!{searchList}');
+
+                // Bind search to the search input change.
+                document.getElementById("search").addEventListener("input", function () {
+                    // Find names containing the search keyword.
+                    const token = this.value.toLowerCase();
+                    const ids = new Set(
+                        list.filter(d => d.split('.').slice(-1)[0].toLowerCase().indexOf(token) > -1)
+                            .map(d => `toc-${d}`)
+                    );
+
+                    // Highlight matching entries.
+                    Array.from(document.getElementsByClassName('toc-entry')).forEach(entry => {
+                        entry.style.display = ids.has(entry.id) ? 'block' : 'none';
+                    });
+                });

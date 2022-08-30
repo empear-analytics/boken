@@ -1,0 +1,20 @@
+@media screen and (min-width: 800px) {
+  aside {
+    margin-left: 0;
+    width: calc(300px - 2px);
+  }
+
+  main {
+    width: calc(100% - 310px);
+  }
+
+  .card {
+    margin: 0 30px 120px 30px;
+  }
+
+  .margined, h3 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
