@@ -1,0 +1,100 @@
+// Code related style.
+@import "colors";
+
+
+pre {
+  &.install {
+    margin: 0 30px;
+
+    code {
+      background-color: #f5f5f5;
+    }
+  }
+
+  code {
+    padding: 30px !important;
+    line-height: 1.5em;
+  }
+}
+
+code.type {
+  background-color: #f5f5f5;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: lighten($colorThemeMain, 42%);
+  color: $colorCodeDefault;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+// Comment, quote.
+.hljs-comment,
+.hljs-quote {
+  color: $colorCodeComment;
+}
+
+// Parameters.
+.hljs-params {
+  // No special color...
+}
+
+// Variables.
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-name,
+.hljs-link,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: $colorCodeDefault;
+}
+
+// Numbers.
+.hljs-number,
+.hljs-meta,
+.hljs-literal,
+.hljs-subst,
+.hljs-type {
+  color: $colorCodeNumber;
+}
+
+// Strings.
+.hljs-string,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-bullet {
+  color: $colorCodeString;
+}
+
+// Functions.
+.hljs-title,
+.hljs-section {
+  color: $colorCodeFunction;
+}
+
+// Built-ins.
+.hljs-built_in,
+.hljs-builtin-name {
+  color: $colorCodeBuiltIn;
+}
+
+// Syntax keywords.
+.hljs-keyword,
+.hljs-attr,
+.hljs-selector-tag {
+  color: $colorCodeKeyword;
+}

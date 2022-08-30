@@ -1,0 +1,2 @@
+- Add floating figure.
+- Add semi-editable option for headings, paragraphs, etc.

@@ -1,0 +1,36 @@
+thead tr th {
+    font-weight: normal;
+    text-align: left;
+    font-variant: all-small-caps;
+    font-family: Montserrat, sans-serif;
+    color: #4b4b4b;
+}
+
+tr {
+    vertical-align: top;
+}
+
+td {
+    padding-top: 10px;
+}
+
+.param-type code,
+.return-type code {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+}
+
+.param-type code:first-child {
+    margin-top: -10px;
+}
+
+.param-name {
+    width: 100px;
+}
+
+.param-type {
+    width: 100px;
+    padding-right: 10px;
+    clear: both;
+    display: inline-block;
+}
