@@ -1,10 +1,13 @@
 # the-book
 Javascript library for writing PDF books
 
+[![CodeScene Code Health](https://codescene.io/projects/29086/status-badges/code-health)](https://codescene.io/projects/29086)
+[![CodeScene System Mastery](https://codescene.io/projects/29086/status-badges/system-mastery)](https://codescene.io/projects/29086)
 ![Coverage: lines](./img/badge-lines.svg)
 ![Coverage: functions](./img/badge-functions.svg)
 ![Coverage: branches](./img/badge-branches.svg)
 ![Coverage: statements](./img/badge-statements.svg)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # what?
 
@@ -28,4 +31,13 @@ npm build
 
 # using yarn
 yarn build
+```
+
+# tests
+
+```bash
+npm test
+
+#or
+yarn test 
 ```
