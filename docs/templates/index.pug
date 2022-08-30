@@ -7,7 +7,7 @@ html(lang="en")
             | !{style}
         title #{name}
     body
-        //| !{gitHubBanner}
+        | !{gitHubBanner}
         input(id="menu", type="checkbox")
         label.menu-button(for="menu") ☰
         label.menu-overlay(for="menu")
@@ -25,12 +25,12 @@ html(lang="en")
                                     a(href="#" + member.index) #{member.signature}
         main
             h1 what
-            p A simple and flexible module that sets the styling of a webpage to resemble a sequence of A4 pages along with some
-              | convenience methods to add text figures and more.
+            p A simple and flexible module that sets the styling of a webpage to resemble a sequence of A4 pages along
+              |  with some convenience methods to add text figures and more.
 
             h1 why
-            p Generating PDFs programmatically is a nightmare. Not anymore: with the book you can design for printing
-              | using HTML, CSS and Javascript.
+            p Generating PDFs programmatically is a nightmare. Not anymore: use HTML, CSS and Javascript to create
+              |  beautiful books
 
             h1 how
             p You can create books in the browser for development and then print them manually or just generate the
