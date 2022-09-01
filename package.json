@@ -12,7 +12,7 @@
   "module": "../boken/src/index.js",
   "scripts": {
     "build:docs": "node docs/index.js",
-    "build": "rollup -c",
+    "build": "rollup -c; cp dist/boken.min.js docs/lib/",
     "dev": "nodemon --watch src --watch test --ext js --exec 'npm run-script test'",
     "standard": "standard --fix src/**/*.js",
     "test": "jest && jest-coverage-badges; cp coverage/*.svg img"
