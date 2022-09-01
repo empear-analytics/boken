@@ -7,7 +7,7 @@ import StyleInjector from './style-injector'
  * The page class.
  *
  * @class Page
- * @memberof book
+ * @memberof boken
  * @param {Book} book The book that the page belongs to.
  */
 export default function (book) {
@@ -81,7 +81,7 @@ export default function (book) {
      * Adds the header to the page.
      *
      * @method addHeader
-     * @memberof book.Page
+     * @memberof boken.Page
      * @returns {Page} Reference to the current page.
      */
   api.addHeader = () => {
@@ -99,7 +99,7 @@ export default function (book) {
      * Adds the footer to the page.
      *
      * @method addFooter
-     * @memberof book.Page
+     * @memberof boken.Page
      * @returns {Page} Reference to the current page.
      */
   api.addFooter = () => {
@@ -118,7 +118,7 @@ export default function (book) {
    * as a paragraph.
    *
    * @method addParagraph
-   * @memberof book.Page
+   * @memberof boken.Page
    * @param {Paragraph} paragraph The paragraph to add.
    * @returns {(Paragraph|undefined)} A paragraph containing the overflown content if any, or undefined.
    */

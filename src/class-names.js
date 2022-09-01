@@ -1,6 +1,6 @@
-const ID = 'the-book'
+const ID = 'boken'
 
-// Class names used in the book.
+// Class names used in boken.
 export default {
   header: `${ID}--header`,
   footer: `${ID}--footer`,

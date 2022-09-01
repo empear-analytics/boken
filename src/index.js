@@ -1,6 +1,6 @@
 /**
- * The book module.
+ * The boken module.
  *
- * @module book
+ * @module boken
  */
 export { default as Book } from './book'
