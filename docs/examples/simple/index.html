@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../../dist/book.min.js"></script>
+    <style>
+        /* Add some style to the page */
+        html, body {
+            font-family: 'Times', serif;
+            font-size: 12pt;
+        }
+
+        .page-number {
+            position: relative;
+            margin: 10mm;
+        }
+    </style>
+    <title></title>
+</head>
+<body></body>
+<script type="module">
+    // Create book
+    const doc = book.Book('Simple page')
+        // Margins on left side pages: 6cm and 3cm.
+        .leftPageMargins({left: 60, right: 30})
+
+        // Margins on right side pages: 3cm and 6cm.
+        .rightPageMargins({left: 30, right: 60})
+
+        // Add page number to footer.
+        .footer(({number}) => {
+            const div = document.createElement('div')
+            div.classList.add('page-number')
+            div.style.float = number % 2 === 0 ? 'right' : 'left'
+            div.textContent = number
+            return div.outerHTML
+        })
+
+    // Add paragraphs.
+    const paragraphs = [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor purus eu quam iaculis, et gravida leo aliquam. Suspendisse porttitor vehicula nisl. Nam tincidunt laoreet velit ac efficitur. Integer sit amet felis quis eros placerat molestie non at urna. Donec faucibus aliquam diam, vel gravida velit dapibus at. Sed egestas quam quis nibh egestas, a dictum urna dapibus. Sed porttitor sodales vulputate. Etiam id laoreet urna.',
+        'Donec vitae risus faucibus, varius dolor ut, aliquet tortor. Aliquam imperdiet lobortis ante, sed egestas ligula maximus ac. Sed id felis eget quam commodo vulputate. Proin pulvinar facilisis porttitor. Integer vehicula hendrerit ligula, non mollis nisl imperdiet sed. Duis ullamcorper interdum fringilla. Sed in purus lacinia, imperdiet nisi id, accumsan lectus.',
+        'Duis nec fermentum enim, ac volutpat urna. Proin felis nisl, lobortis sagittis posuere ornare, lacinia non urna. Donec vehicula ultrices risus rhoncus maximus. Proin in mi pulvinar, aliquam dui eu, pulvinar ipsum. Mauris quis risus et ligula vulputate sollicitudin. Mauris faucibus libero convallis, lobortis libero ac, efficitur lacus. Sed vulputate diam dolor, non porta risus pulvinar a. Quisque elementum iaculis risus eget placerat. Mauris nec massa vehicula, fermentum leo ornare, aliquam enim. Fusce dignissim sem quis convallis placerat.',
+        'Nullam efficitur ultrices rutrum. Nullam sit amet pretium risus, in bibendum neque. Morbi viverra sem nec facilisis gravida. Cras lacinia quis turpis ut posuere. Sed fermentum vitae velit non malesuada. Nullam iaculis neque quis luctus rutrum. Integer lobortis, nisl eget fermentum efficitur, sapien magna porttitor mi, quis commodo magna est ut orci.',
+        'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas in tempor purus, vel faucibus velit. Nam pulvinar est fermentum justo rhoncus aliquet. Vestibulum gravida magna sodales tellus pulvinar iaculis. Aliquam erat volutpat. Donec vehicula sollicitudin elit eu placerat. Maecenas vulputate felis eget eros mollis, vitae venenatis nisl mattis. Sed pellentesque nulla ac tortor blandit bibendum. Mauris lectus enim, commodo ut justo in, aliquam maximus lacus. Maecenas vel purus leo. Duis id dolor id eros dignissim venenatis quis et tortor. Suspendisse consectetur ultricies tincidunt. Proin tristique lacus et neque venenatis blandit. Integer eu lacus sapien.',
+        'Pellentesque rutrum dignissim lorem, in malesuada enim laoreet sed. Ut ut accumsan massa. Pellentesque vitae sem eget orci rutrum varius eu at lorem. Ut tincidunt gravida tincidunt. Maecenas pulvinar dapibus placerat. Nullam ante augue, cursus vel ipsum in, efficitur consectetur mi. Donec pellentesque nunc et nulla pretium, non sodales felis ullamcorper. Donec sapien libero, fermentum id libero pellentesque, aliquam aliquam eros. Integer vitae lobortis dui, et venenatis magna. In dignissim velit id magna molestie, ut imperdiet nisl imperdiet. Vivamus vulputate ligula lacus, eget aliquam lacus interdum in. Sed nisi neque, consectetur at molestie et, porta in justo. Sed sit amet suscipit orci. Suspendisse dignissim neque in euismod suscipit. Vivamus nec felis vel mi fringilla consequat sit amet at ipsum. Cras ornare venenatis magna vitae vestibulum.',
+        'Etiam non rhoncus dolor, nec laoreet risus. Aliquam volutpat augue nec elementum venenatis. Phasellus non turpis a nisl ullamcorper egestas. Nulla elementum purus tellus, vel tempus nulla aliquet nec. Pellentesque venenatis fermentum ullamcorper. Pellentesque at porta turpis. Aliquam tempus, libero vitae pharetra accumsan, arcu nibh posuere turpis, id rutrum tortor leo ut diam. Integer dapibus lectus risus, et vulputate neque ullamcorper in. Maecenas blandit rutrum odio at congue.',
+    ]
+    paragraphs.forEach(doc.writeParagraph)
+</script>
+</html>
