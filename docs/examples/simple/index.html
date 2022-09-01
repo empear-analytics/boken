@@ -18,9 +18,9 @@
     <title></title>
 </head>
 <body></body>
-<script type="module">
+<script>
     // Create book
-    const doc = boken.Book('Simple page')
+    const book = boken.Book('Simple page')
         // Margins on left side pages: 6cm and 3cm.
         .leftPageMargins({left: 60, right: 30})
 
@@ -46,6 +46,6 @@
         'Pellentesque rutrum dignissim lorem, in malesuada enim laoreet sed. Ut ut accumsan massa. Pellentesque vitae sem eget orci rutrum varius eu at lorem. Ut tincidunt gravida tincidunt. Maecenas pulvinar dapibus placerat. Nullam ante augue, cursus vel ipsum in, efficitur consectetur mi. Donec pellentesque nunc et nulla pretium, non sodales felis ullamcorper. Donec sapien libero, fermentum id libero pellentesque, aliquam aliquam eros. Integer vitae lobortis dui, et venenatis magna. In dignissim velit id magna molestie, ut imperdiet nisl imperdiet. Vivamus vulputate ligula lacus, eget aliquam lacus interdum in. Sed nisi neque, consectetur at molestie et, porta in justo. Sed sit amet suscipit orci. Suspendisse dignissim neque in euismod suscipit. Vivamus nec felis vel mi fringilla consequat sit amet at ipsum. Cras ornare venenatis magna vitae vestibulum.',
         'Etiam non rhoncus dolor, nec laoreet risus. Aliquam volutpat augue nec elementum venenatis. Phasellus non turpis a nisl ullamcorper egestas. Nulla elementum purus tellus, vel tempus nulla aliquet nec. Pellentesque venenatis fermentum ullamcorper. Pellentesque at porta turpis. Aliquam tempus, libero vitae pharetra accumsan, arcu nibh posuere turpis, id rutrum tortor leo ut diam. Integer dapibus lectus risus, et vulputate neque ullamcorper in. Maecenas blandit rutrum odio at congue.',
     ]
-    paragraphs.forEach(doc.writeParagraph)
+    paragraphs.forEach(book.write.p)
 </script>
 </html>

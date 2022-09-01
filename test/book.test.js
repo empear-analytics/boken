@@ -82,8 +82,8 @@ describe('Book', () => {
   describe('writeParagraph', () => {
     test('should write paragraph on two pages', () => {
       const book = Book('foo')
-      expect(book.writeParagraph('Lorem ipsum').numberOfPages()).toBe(2)
-      expect(book.writeParagraph('Foo bar').numberOfPages()).toBe(3)
+      expect(book.write.p('Lorem ipsum').numberOfPages()).toBe(2)
+      expect(book.write.p('Foo bar').numberOfPages()).toBe(3)
     })
   })
 })

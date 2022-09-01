@@ -60,7 +60,9 @@ export default function (name) {
   }
 
   // Public methods.
-  const api = {}
+  const api = {
+    write: {}
+  }
 
   api.page = index => _.pages.all[index]
 
@@ -213,7 +215,7 @@ export default function (name) {
    * @param {string} text The paragraph text to write in the book.
    * @returns {Book} Reference to the book.
    */
-  api.writeParagraph = text => {
+  api.write.p = text => {
     // Create paragraph.
     let paragraph = Paragraph(text, '5mm')
 
