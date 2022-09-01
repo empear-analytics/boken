@@ -1,5 +1,5 @@
 {
-  "name": "book",
+  "name": "boken",
   "version": "0.0.1",
   "author": {
     "name": "Enys Mones",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "homepage": "https://github.com/empear-analytics/boken",
   "main": "boken.min.js",
-  "module": "../boken/src/book.js",
+  "module": "../boken/src/index.js",
   "scripts": {
     "build:docs": "node docs/index.js",
     "build": "rollup -c",
