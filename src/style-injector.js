@@ -3,13 +3,13 @@
  * the added style.
  *
  * @class StyleInjector
- * @memberof book
+ * @memberof boken
  * @param {string} id The unique identifier of the injector. It is used as part of the ID of the corresponding style
  * element.
  * @ignore
  */
 export default (() => {
-  const ID = 'the-book--style'
+  const ID = 'boken--style'
   const EMPTY_MEDIA = '_none'
 
   // Private members.
@@ -74,7 +74,7 @@ export default (() => {
    * Adds a new style to the page. If the style already exists for the specified media and selector, it is not added.
    *
    * @method add
-   * @memberof book.StyleInjector
+   * @memberof boken.StyleInjector
    * @param {string} selector The CSS query selector to add the style for.
    * @param {Object} style An object representing the style (name: value) pairs.
    * @param {string?} media The media to add style for.
@@ -93,7 +93,7 @@ export default (() => {
    * Adds a new style or updates an existing one.
    *
    * @method update
-   * @memberof book.StyleInjector
+   * @memberof boken.StyleInjector
    * @param {string} selector The CSS query selector to add the style for.
    * @param {Object} style An object representing the style (name: value) pairs.
    * @param {string?} media The media to add style for.

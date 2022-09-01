@@ -5,7 +5,7 @@ describe('Paragraph', () => {
   describe('Paragraph', () => {
     test('should add paragraph style', () => {
       Paragraph('Lorem ipsum')
-      expect(document.getElementById('the-book--style').textContent)
+      expect(document.getElementById('boken--style').textContent)
         .toBe('p{padding:3mm 0}')
     })
   })

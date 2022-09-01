@@ -11,9 +11,9 @@ export default {
         nodeResolve()
     ],
     output: {
-        file: 'dist/book.min.js',
+        file: 'dist/boken.min.js',
         format: 'umd',
-        name: 'book',
+        name: 'boken',
         indent: false,
     }
 }

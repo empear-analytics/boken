@@ -56,13 +56,13 @@ hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascri
     let page = template({
         // TODO Add demo page
         api, menu, style,
-        name: 'the-book',
+        name: 'boken',
         searchList: JSON.stringify(searchList),
         gitHubBanner: fs.readFileSync('./docs/templates/github-banner.html', {encoding: 'utf-8'}),
         install: {
-            browser: hljs.highlight(`<script type="text/javascript" src="book.min.js"></script>`, {language: 'xml'})
+            browser: hljs.highlight(`<script type="text/javascript" src="boken.min.js"></script>`, {language: 'xml'})
                 .value,
-            node: hljs.highlight('npm install --save the-book', {language: 'bash'}).value
+            node: hljs.highlight('npm install --save boken', {language: 'bash'}).value
         }
     })
 

@@ -5,7 +5,7 @@ import StyleInjector from './style-injector'
  * Factory representing a paragraph in the book.
  *
  * @class Paragraph
- * @memberof book
+ * @memberof boken
  * @param {string} text The paragraph content.
  * @param {string=} indent Size of the indent, if any.
  */
@@ -35,7 +35,7 @@ export default function Paragraph (text, indent) {
    * Appends the paragraph to a parent node.
    *
    * @method appendTo
-   * @memberof book.Paragraph
+   * @memberof boken.Paragraph
    * @param {HTMLElement} parent Parent node to append paragraph to.
    * @returns {Paragraph} Reference to the paragraph.
    */
@@ -56,7 +56,7 @@ export default function Paragraph (text, indent) {
    * Calculates the overflown paragraph.
    *
    * @method calculateOverflow
-   * @memberof book.Paragraph
+   * @memberof boken.Paragraph
    * @param {number} innerHeight The current height to be used to determine overflow.
    * @returns {(Paragraph|undefined)} Paragraph containing the overflow if any, undefined otherwise.
    */
