@@ -7,8 +7,8 @@ describe('Book', () => {
   describe('Book', () => {
     test('should add book style', () => {
       Book('foo')
-      expect(document.getElementById('the-book--style').innerHTML)
-        .toBe('.the-book--footer{position:absolute;bottom:0;left:0;width:100%}.the-book--header{position:absolute;top:0;left:0;width:100%}.the-book--margins--side-left{width:150mm;height:237mm;margin:30mm}.the-book--margins--side-right{width:150mm;height:237mm;margin:30mm}html,body{margin:0;padding:0;background:#ddd;-webkit-print-color-adjust:exact;-webkit-filter:opacity(1)}@media print{html,body{margin:0 !important;padding:0;box-shadow:none}}')
+      expect(document.getElementById('boken--style').innerHTML)
+        .toBe('.boken--footer{position:absolute;bottom:0;left:0;width:100%}.boken--header{position:absolute;top:0;left:0;width:100%}.boken--margins--side-left{width:150mm;height:237mm;margin:30mm}.boken--margins--side-right{width:150mm;height:237mm;margin:30mm}html,body{margin:0;padding:0;background:#ddd;-webkit-print-color-adjust:exact;-webkit-filter:opacity(1)}@media print{html,body{margin:0 !important;padding:0;box-shadow:none}}')
     })
   })
 

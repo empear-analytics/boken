@@ -5,7 +5,7 @@ import CLASS_NAMES from './class-names'
  * Factory for margins.
  *
  * @function Margins
- * @memberof book
+ * @memberof boken
  */
 export default function (side) {
   // Add relevant style.
@@ -30,7 +30,7 @@ export default function (side) {
    * Returns a calculated inner width for a page based on the current margins.
    *
    * @method innerWidth
-   * @memberof book.Margins
+   * @memberof boken.Margins
    * @param {number} pageWidth Original width of the page.
    * @returns {number} The calculated inner width.
    */
@@ -42,7 +42,7 @@ export default function (side) {
    * Returns a calculated inner height for a page based on the current margins.
    *
    * @method innerHeight
-   * @memberof book.Margins
+   * @memberof boken.Margins
    * @param {number} pageHeight Original height of the page.
    * @returns {number} The calculated inner height.
    */
@@ -54,7 +54,7 @@ export default function (side) {
    * Returns the margins as a CSS style value.
    *
    * @method toStyle
-   * @memberof book.Margins
+   * @memberof boken.Margins
    * @returns {string} String representing the margins as CSS style.
    */
   function toStyle () {
@@ -70,7 +70,7 @@ export default function (side) {
      * Updates the margin values on some sides.
      *
      * @method update
-     * @memberof book.Margins
+     * @memberof boken.Margins
      * @param {Object} margins Object containing the values for the sides that should be updated.
      */
     update (margins) {

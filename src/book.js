@@ -8,7 +8,7 @@ import CLASS_NAMES from './class-names'
  * Factory for the book object.
  *
  * @class Book
- * @memberof book
+ * @memberof boken
  * @param {string} name Title of the book as shown in the browser's page tab. This is also used as the default
  * file name when printing.
  */
@@ -68,14 +68,14 @@ export default function (name) {
      * Returns the current margins for left side pages.
      *
      * @method leftPageMargins
-     * @memberof book.Book
+     * @memberof boken.Book
      * @returns {Margin} The margin for the left side pages.
      */
   /**
      * Sets the page margins for left side pages.
      *
      * @method leftPageMargins
-     * @memberof book.Book
+     * @memberof boken.Book
      * @param {Margin} margins Object containing the margins that should be updated for the left side pages.
      * @returns {Book} Reference to the book.
      */
@@ -91,14 +91,14 @@ export default function (name) {
      * Returns the current margins for right side pages.
      *
      * @method rightPageMargins
-     * @memberof book.Book
+     * @memberof boken.Book
      * @returns {Margin} The margin for the right side pages.
      */
   /**
      * Sets the page margins for right side pages.
      *
      * @method rightPageMargins
-     * @memberof book.Book
+     * @memberof boken.Book
      * @param {Margin} margins Object containing the margins that should be updated for the right side pages.
      * @returns {Book} Reference to the book.
      */
@@ -114,14 +114,14 @@ export default function (name) {
      * Returns the page header.
      *
      * @method header
-     * @memberof book.Book
+     * @memberof boken.Book
      * @returns {Function} The current header.
      */
   /**
      * Sets the page header.
      *
      * @method header
-     * @memberof book.Book
+     * @memberof boken.Book
      * @param {Function} callback Function that takes some parameters and returns an HTML string representing the page
      * header. If not specified, the current header function is returned.
      * @returns {Book} Reference to the current book.
@@ -138,15 +138,14 @@ export default function (name) {
      * Returns or sets the page footer.
      *
      * @method footer
-     * @memberof book.Book
-     * @returns {Function} The current footer (if called without any parameters) or reference to the current
-     * book.
+     * @memberof boken.Book
+     * @returns {Function} The current footer (if called without any parameters) or reference to the current book.
      */
   /**
      * Returns or sets the page footer.
      *
      * @method footer
-     * @memberof book.Book
+     * @memberof boken.Book
      * @param {Function} callback Function that takes some parameters and returns an HTML string representing the page
      * footer. If not specified, the current footer function is returned.
      * @returns {Book} Reference to the current book.
@@ -163,7 +162,7 @@ export default function (name) {
    * Returns the book width.
    *
    * @method width
-   * @memberof book.Book
+   * @memberof boken.Book
    * @returns {number} The book width.
    */
   api.width = () => _.width
@@ -172,7 +171,7 @@ export default function (name) {
    * Returns the book height.
    *
    * @method height
-   * @memberof book.Book
+   * @memberof boken.Book
    * @returns {number} The book height.
    */
   api.height = () => _.height
@@ -181,7 +180,7 @@ export default function (name) {
      * Adds a new page to the book.
      *
      * @method addPage
-     * @memberof book.Book
+     * @memberof boken.Book
      * @param {Object} options Page options.
      * @returns {Page} The newly added page.
      */
@@ -210,7 +209,7 @@ export default function (name) {
    * Writes a paragraph in the book.
    *
    * @method writeParagraph
-   * @memberof book.Book
+   * @memberof boken.Book
    * @param {string} text The paragraph text to write in the book.
    * @returns {Book} Reference to the book.
    */
@@ -238,7 +237,7 @@ export default function (name) {
    * Returns the current number of pages in the book.
    *
    * @method numberOfPages
-   * @memberof book.Book
+   * @memberof boken.Book
    * @returns {number} Number of pages.
    */
   api.numberOfPages = () => _.pages.all.length
