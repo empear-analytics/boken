@@ -208,7 +208,7 @@ export default function (name) {
   /**
    * Writes a paragraph in the book.
    *
-   * @method writeParagraph
+   * @method write.p
    * @memberof boken.Book
    * @param {string} text The paragraph text to write in the book.
    * @returns {Book} Reference to the book.
