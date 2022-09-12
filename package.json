@@ -16,7 +16,7 @@
     "dev": "nodemon --watch src --watch test --ext js --exec 'npm run-script test'",
     "dev:docs": "nodemon --watch docs --ext scss,js,pug --exec 'npm run-script build:docs'",
     "standard": "standard --fix src/**/*.js",
-    "test": "jest && jest-coverage-badges; cp coverage/*.svg docs/img"
+    "test": "jest && jest-coverage-badges; cp coverage/*.svg img"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",
