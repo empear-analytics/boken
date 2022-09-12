@@ -1,6 +1,6 @@
 {
   "name": "@codescene/boken",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Enys Mones",
     "email": "enys.mones@codescene.com",
@@ -41,7 +41,9 @@
     "standard": "^16.0.4"
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "jest": {
     "collectCoverage": true,
