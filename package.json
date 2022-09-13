@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/empear-analytics/boken",
-  "main": "boken.min.js",
+  "main": "dist/boken.min.js",
   "module": "../boken/src/index.js",
   "scripts": {
     "build:docs": "node docs/index.js",

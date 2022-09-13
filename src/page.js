@@ -78,12 +78,12 @@ export default function (book) {
   const api = {}
 
   /**
-     * Adds the header to the page.
-     *
-     * @method addHeader
-     * @memberof boken.Page
-     * @returns {Page} Reference to the current page.
-     */
+   * Adds the header to the page.
+   *
+   * @method addHeader
+   * @memberof boken.Page
+   * @returns {Page} Reference to the current page.
+   */
   api.addHeader = () => {
     const header = book.header()
     _.outer.appendChild(create({
@@ -96,12 +96,12 @@ export default function (book) {
   }
 
   /**
-     * Adds the footer to the page.
-     *
-     * @method addFooter
-     * @memberof boken.Page
-     * @returns {Page} Reference to the current page.
-     */
+   * Adds the footer to the page.
+   *
+   * @method addFooter
+   * @memberof boken.Page
+   * @returns {Page} Reference to the current page.
+   */
   api.addFooter = () => {
     const footer = book.footer()
     _.outer.appendChild(create({
@@ -129,6 +129,10 @@ export default function (book) {
     // Add paragraph to page and return any overflown paragraph.
     return paragraph.appendTo(_.inner)
       .calculateOverflow(toPixel(_.margins.getHeight(book.height())))
+  }
+
+  api.addFigure = figure => {
+    _.inner.appendChild(figure)
   }
 
   return api

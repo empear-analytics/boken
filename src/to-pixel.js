@@ -15,6 +15,7 @@ export default (() => {
     if (typeof _.scale === 'undefined') {
       const div = document.createElement('div')
       div.style.position = 'absolute'
+      div.style.top = '0'
       div.style.visibility = 'hidden'
       div.style.width = '1mm'
       div.style.height = '100mm'

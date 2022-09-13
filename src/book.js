@@ -67,20 +67,20 @@ export default function (name) {
   api.page = index => _.pages.all[index]
 
   /**
-     * Returns the current margins for left side pages.
-     *
-     * @method leftPageMargins
-     * @memberof boken.Book
-     * @returns {Margin} The margin for the left side pages.
-     */
+   * Returns the current margins for left side pages.
+   *
+   * @method leftPageMargins
+   * @memberof boken.Book
+   * @returns {Margin} The margin for the left side pages.
+   */
   /**
-     * Sets the page margins for left side pages.
-     *
-     * @method leftPageMargins
-     * @memberof boken.Book
-     * @param {Margin} margins Object containing the margins that should be updated for the left side pages.
-     * @returns {Book} Reference to the book.
-     */
+   * Sets the page margins for left side pages.
+   *
+   * @method leftPageMargins
+   * @memberof boken.Book
+   * @param {Margin} margins Object containing the margins that should be updated for the left side pages.
+   * @returns {Book} Reference to the book.
+   */
   api.leftPageMargins = margins => {
     if (typeof margins === 'undefined') {
       return _.margins.leftPage
@@ -90,20 +90,20 @@ export default function (name) {
   }
 
   /**
-     * Returns the current margins for right side pages.
-     *
-     * @method rightPageMargins
-     * @memberof boken.Book
-     * @returns {Margin} The margin for the right side pages.
-     */
+   * Returns the current margins for right side pages.
+   *
+   * @method rightPageMargins
+   * @memberof boken.Book
+   * @returns {Margin} The margin for the right side pages.
+   */
   /**
-     * Sets the page margins for right side pages.
-     *
-     * @method rightPageMargins
-     * @memberof boken.Book
-     * @param {Margin} margins Object containing the margins that should be updated for the right side pages.
-     * @returns {Book} Reference to the book.
-     */
+   * Sets the page margins for right side pages.
+   *
+   * @method rightPageMargins
+   * @memberof boken.Book
+   * @param {Margin} margins Object containing the margins that should be updated for the right side pages.
+   * @returns {Book} Reference to the book.
+   */
   api.rightPageMargins = margins => {
     if (typeof margins === 'undefined') {
       return _.margins.rightPage
@@ -113,21 +113,21 @@ export default function (name) {
   }
 
   /**
-     * Returns the page header.
-     *
-     * @method header
-     * @memberof boken.Book
-     * @returns {Function} The current header.
-     */
+   * Returns the page header.
+   *
+   * @method header
+   * @memberof boken.Book
+   * @returns {Function} The current header.
+   */
   /**
-     * Sets the page header.
-     *
-     * @method header
-     * @memberof boken.Book
-     * @param {Function} callback Function that takes some parameters and returns an HTML string representing the page
-     * header. If not specified, the current header function is returned.
-     * @returns {Book} Reference to the current book.
-     */
+   * Sets the page header.
+   *
+   * @method header
+   * @memberof boken.Book
+   * @param {Function} callback Function that takes some parameters and returns an HTML string representing the page
+   * header. If not specified, the current header function is returned.
+   * @returns {Book} Reference to the current book.
+   */
   api.header = callback => {
     if (typeof callback === 'undefined') {
       return _.header
@@ -137,21 +137,21 @@ export default function (name) {
   }
 
   /**
-     * Returns or sets the page footer.
-     *
-     * @method footer
-     * @memberof boken.Book
-     * @returns {Function} The current footer (if called without any parameters) or reference to the current book.
-     */
+   * Returns or sets the page footer.
+   *
+   * @method footer
+   * @memberof boken.Book
+   * @returns {Function} The current footer (if called without any parameters) or reference to the current book.
+   */
   /**
-     * Returns or sets the page footer.
-     *
-     * @method footer
-     * @memberof boken.Book
-     * @param {Function} callback Function that takes some parameters and returns an HTML string representing the page
-     * footer. If not specified, the current footer function is returned.
-     * @returns {Book} Reference to the current book.
-     */
+   * Returns or sets the page footer.
+   *
+   * @method footer
+   * @memberof boken.Book
+   * @param {Function} callback Function that takes some parameters and returns an HTML string representing the page
+   * footer. If not specified, the current footer function is returned.
+   * @returns {Book} Reference to the current book.
+   */
   api.footer = callback => {
     if (typeof callback === 'undefined') {
       return _.footer
@@ -179,13 +179,13 @@ export default function (name) {
   api.height = () => _.height
 
   /**
-     * Adds a new page to the book.
-     *
-     * @method addPage
-     * @memberof boken.Book
-     * @param {Object} options Page options.
-     * @returns {Page} The newly added page.
-     */
+   * Adds a new page to the book.
+   *
+   * @method addPage
+   * @memberof boken.Book
+   * @param {Object} options Page options.
+   * @returns {Page} The newly added page.
+   */
   api.addPage = (options = {
     header: true,
     footer: true
@@ -232,6 +232,17 @@ export default function (name) {
       }
     } while (typeof paragraph !== 'undefined')
 
+    return api
+  }
+
+  api.write.figure = figure => {
+    // TODO MarginNote factory: side from page, .at()
+    // TODO Caption factory: .margin()
+    // TODO Create Figure factory: .img(path) .svg(), .width(), .caption()
+    // TODO Check if figure spills over the page.
+    // TODO If figure is larger than page, throw an error.
+    // TODO If figure flows over, add new page and save current page into caret to continue paragraphs from there.
+    _.pages.current.addFigure(figure)
     return api
   }
 
