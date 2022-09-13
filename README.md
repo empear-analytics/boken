@@ -5,10 +5,10 @@ Book
 
 [![CodeScene Code Health](https://codescene.io/projects/29133/status-badges/code-health)](https://codescene.io/projects/29133)
 [![CodeScene System Mastery](https://codescene.io/projects/29133/status-badges/system-mastery)](https://codescene.io/projects/29133)
-![Coverage: lines](docs/img/badge-lines.svg)
-![Coverage: functions](docs/img/badge-functions.svg)
-![Coverage: branches](docs/img/badge-branches.svg)
-![Coverage: statements](docs/img/badge-statements.svg)
+![Coverage: lines](img/badge-lines.svg)
+![Coverage: functions](img/badge-functions.svg)
+![Coverage: branches](img/badge-branches.svg)
+![Coverage: statements](img/badge-statements.svg)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # what?

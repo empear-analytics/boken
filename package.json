@@ -1,6 +1,6 @@
 {
   "name": "@codescene/boken",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Enys Mones",
     "email": "enys.mones@codescene.com",
@@ -16,7 +16,7 @@
     "dev": "nodemon --watch src --watch test --ext js --exec 'npm run-script test'",
     "dev:docs": "nodemon --watch docs --ext scss,js,pug --exec 'npm run-script build:docs'",
     "standard": "standard --fix src/**/*.js",
-    "test": "jest && jest-coverage-badges; cp coverage/*.svg docs/img"
+    "test": "jest && jest-coverage-badges; cp coverage/*.svg img"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",
@@ -41,7 +41,9 @@
     "standard": "^16.0.4"
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "jest": {
     "collectCoverage": true,
