@@ -7,7 +7,7 @@ describe('Book', () => {
     test('should add book style', () => {
       Book('foo')
       expect(document.getElementById('boken--style').innerHTML)
-        .toBe('.boken--footer{position:absolute;bottom:0;left:0;width:100%}.boken--header{position:absolute;top:0;left:0;width:100%}.boken--margins--side-left{width:150mm;height:237mm;margin:30mm}.boken--margins--side-right{width:150mm;height:237mm;margin:30mm}html,body{margin:0;padding:0;background:#ddd;-webkit-print-color-adjust:exact;-webkit-filter:opacity(1)}@media print{html,body{margin:0 !important;padding:0;box-shadow:none}}')
+        .toBe('.boken--footer{position:absolute;bottom:0;left:0;width:100%}.boken--header{position:absolute;top:0;left:0;width:100%}.boken--margins--left-page{width:150mm;height:237mm;margin:30mm}.boken--margins--right-page{width:150mm;height:237mm;margin:30mm}html,body{margin:0;padding:0;background:#ddd;-webkit-print-color-adjust:exact;-webkit-filter:opacity(1)}@media print{html,body{margin:0 !important;padding:0;box-shadow:none}}')
     })
   })
 
@@ -74,15 +74,21 @@ describe('Book', () => {
         .footer(() => '<div>FOOTER</div>')
         .addPage()
       expect(book.page(0).addHeader.mock.calls.length).toBe(1)
-
     })
   })
 
-  describe('writeParagraph', () => {
+  describe('write.p', () => {
     test('should write paragraph on two pages', () => {
       const book = Book('foo')
       expect(book.write.p('Lorem ipsum').numberOfPages()).toBe(2)
       expect(book.write.p('Foo bar').numberOfPages()).toBe(3)
+    })
+  })
+
+  describe('write.marginNote', () => {
+    test('should write margin note on the page', () => {
+      Book('foo').addPage().write.marginNote('Margin note text')
+      expect(document.body.innerHTML).toBe('Margin note text')
     })
   })
 })

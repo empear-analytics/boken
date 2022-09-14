@@ -62,10 +62,6 @@ export default function (side) {
   }
 
   return {
-    left: () => _.margins.left,
-    right: () => _.margins.right,
-    getWidth: innerWidth,
-    getHeight: innerHeight,
     toStyle,
 
     /**

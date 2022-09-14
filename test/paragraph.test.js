@@ -13,24 +13,7 @@ describe('Paragraph', () => {
   describe('appendTo', () => {
     test('should append paragraph to an element', () => {
       Paragraph('Some text', '3mm').appendTo(document.body)
-      expect(document.body.innerHTML).toBe('<p style="margin: 0px; text-indent: 3mm;">Some text</p>')
-    })
-  })
-
-  describe('text', () => {
-    test('should return the paragraph text', () => {
-      const p = Paragraph('Some text')
-        .appendTo(document.body)
-      expect(p.content()).toBe('Some text')
-      expect(document.getElementsByTagName('p')[0].innerHTML).toBe('Some text')
-    })
-
-    test('should update paragraph text', () => {
-      const p = Paragraph('Some text')
-        .appendTo(document.body)
-        .content('Another text')
-      expect(p.content()).toBe('Another text')
-      expect(document.getElementsByTagName('p')[0].innerHTML).toBe('Another text')
+      expect(document.body.innerHTML).toBe('<p style="margin: 0px;">Some text</p>')
     })
   })
 
@@ -56,7 +39,7 @@ describe('Paragraph', () => {
       const overflow = Paragraph('a b c d e f g h i j')
         .appendTo(container)
         .calculateOverflow(1)
-      expect(overflow.content()).toBe('e f g h i j')
+      expect(overflow.__test__.content()).toBe('e f g h i j')
     })
   })
 })

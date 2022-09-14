@@ -1,15 +1,13 @@
-import Margins from '../src/margins'
 import Paragraph from '../src/paragraph'
 import Book from '../src/book'
 import Page from '../src/page'
+import MarginNote from '../src/margin-note'
 import './utils'
 
-jest.mock('../src/margins')
 jest.mock('../src/paragraph')
 jest.mock('../src/book')
 
 describe('Page', () => {
-
   describe('Page', () => {
     test('should add page style for left page', () => {
       Page(Book('foo'))
@@ -54,8 +52,15 @@ describe('Page', () => {
 
   describe('addParagraph', () => {
     test('should add paragraph', () => {
-      expect(Page(Book('foo')).addParagraph(Paragraph('Foo bar')).content())
+      expect(Page(Book('foo')).addParagraph(Paragraph('Foo bar')).__test__.content())
         .toBe('bar')
+    })
+  })
+
+  describe('addMarginNote', () => {
+    test('should add paragraph', () => {
+      expect(Page(Book('foo')).addMarginNote(MarginNote('Foo bar')).__test__.content())
+        .toBe('Foo bar')
     })
   })
 })

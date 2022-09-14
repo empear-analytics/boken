@@ -9,13 +9,12 @@ export default function () {
         length: 4
       }
     },
-    margins: {
-      leftPage: Margins('left'),
-      rightPage: Margins('right')
-    },
-    header: () => '<div>HEADER</div>',
-    footer: () => '<div>FOOTER</div>',
+    leftPageMargins: () => Margins('left'),
+    rightPageMargins: () => Margins('right'),
+    header: () => () => '<div>HEADER</div>',
+    footer: () => () => '<div>FOOTER</div>',
     addPage: () => numPages++,
-    numberOfPages: () => numPages
+    numberOfPages: () => numPages,
+    height: () => 10
   }
 }

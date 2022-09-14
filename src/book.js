@@ -3,6 +3,7 @@ import Page from './page'
 import StyleInjector from './style-injector'
 import Paragraph from './paragraph'
 import CLASS_NAMES from './class-names'
+import MarginNote from './margin-note'
 
 /**
  * Factory for the book object.
@@ -191,7 +192,7 @@ export default function (name) {
     footer: true
   }) => {
     // Add page.
-    _.pages.current = Page(_)
+    _.pages.current = Page(api)
     _.pages.all.push(_.pages.current)
 
     // Add header.
@@ -212,12 +213,15 @@ export default function (name) {
    *
    * @method write.p
    * @memberof boken.Book
-   * @param {string} text The paragraph text to write in the book.
+   * @param {string} content The HTML content of the paragraph.
+   * @param {Object=} options Paragraph options.
    * @returns {Book} Reference to the book.
    */
-  api.write.p = text => {
+  api.write.p = (content, options) => {
     // Create paragraph.
-    let paragraph = Paragraph(text, '5mm')
+    let paragraph = Paragraph(content, Object.assign({
+      indent: '5mm'
+    }, options))
 
     // If no pages created yet, add one with header and footer (assuming regular page).
     if (_.pages.all.length === 0) {
@@ -235,8 +239,9 @@ export default function (name) {
     return api
   }
 
-  api.write.marginNote = () => {
-    return _.pages.current.addMarginNote()
+  api.write.marginNote = (content, options) => {
+    _.pages.current.addMarginNote(MarginNote(content, options))
+    return api
   }
 
   /**

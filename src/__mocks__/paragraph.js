@@ -1,7 +1,9 @@
 export default function Paragraph (content) {
   const api = {}
 
-  api.content = () => content
+  api.__test__ = {
+    content: () => content
+  }
 
   api.appendTo = () => api
 

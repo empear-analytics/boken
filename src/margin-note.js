@@ -8,11 +8,10 @@ import CLASS_NAMES from './class-names'
  * @class MarginNote
  * @memberof boken
  */
-export default function (page) {
+export default function (content, options = {}) {
   // Add relevant style.
   StyleInjector.add('.' + CLASS_NAMES.marginNote, {
     position: 'absolute',
-    // TODO Expose this to API.
     margin: '5mm'
   })
 
@@ -21,30 +20,22 @@ export default function (page) {
     // DOM element.
     el: create({
       tag: 'div',
-      classNames: [CLASS_NAMES.marginNote]
+      classNames: [CLASS_NAMES.marginNote],
+      html: content
     })
   }
-
-  // Add DOM element.
-  page.outer.appendChild(_.el)
 
   // Public methods.
   const api = {}
 
-  api.content = content => {
-    _.el.innerHTML = content
-    return api
+  /* test-code */
+  api.__test__ = {
+    content: () => _.el.innerHTML
   }
+  /* end-test-code */
 
-  api.side = side => {
-    _.el.style[side] = 0
-    // TODO Use private member _ of Margins instead of accessing it directly.
-    _.el.style.width = `calc(${page.margins[side]()}mm - 10mm)`
-    return api
-  }
-
-  api.position = position => {
-    _.el.style.top = position
+  api.appendTo = parent => {
+    parent.appendChild(_.el)
     return api
   }
 

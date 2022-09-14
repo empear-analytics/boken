@@ -7,14 +7,9 @@ import StyleInjector from './style-injector'
  * @class Paragraph
  * @memberof boken
  * @param {string} content The paragraph content. Can be HTML formatted.
- * @param {string=} indent Size of the indent, if any.
+ * @param {Object=} options Paragraph options.
  */
-export default function Paragraph (content, indent) {
-  // TODO Pass page as the only parameter.
-  // TODO Build content with .content() and indent with .indent().
-  // TODO Calculate overflow right away and make it accessible via a method .overflow() which returns a paragraph.
-  // TODO Make sure an overflown paragraph can be added to a page in Page.
-
+export default function Paragraph (content, options = {}) {
   // Add relevant style.
   StyleInjector.add('p', {
     padding: '3mm 0'
@@ -22,12 +17,11 @@ export default function Paragraph (content, indent) {
 
   // Private members.
   const _ = {
-    indent,
     el: create({
       tag: 'p',
       style: {
         margin: 0,
-        'text-indent': indent || null
+        'text-indent': options?.indent || null
       },
       html: content
     })
@@ -35,6 +29,12 @@ export default function Paragraph (content, indent) {
 
   // Public methods.
   const api = {}
+
+  /* test-code */
+  api.__test__ = {
+    content: () => _.el.innerHTML
+  }
+  /* end-test-code */
 
   /**
    * Appends the paragraph to a parent node.
@@ -46,29 +46,6 @@ export default function Paragraph (content, indent) {
    */
   api.appendTo = parent => {
     parent.appendChild(_.el)
-    return api
-  }
-
-  /**
-   * Sets the content of the paragraph.
-   *
-   * @method content
-   * @memberof boken.Paragraph
-   * @param {string} content The HTML content to set.
-   * @returns {Paragraph} Reference to the paragraph.
-   */
-  /**
-   * Returns the content of the paragraph.
-   *
-   * @method content
-   * @memberof boken.Paragraph
-   * @returns {string} The paragraph content.
-   */
-  api.content = content => {
-    if (typeof content === 'undefined') {
-      return _.el.innerHTML
-    }
-    _.el.innerHTML = content
     return api
   }
 
@@ -106,7 +83,9 @@ export default function Paragraph (content, indent) {
     }
 
     // Return the overflown paragraph.
-    return index < tokens.length ? Paragraph(tokens.slice(index).join(' ')) : undefined
+    return index < tokens.length
+      ? Paragraph(tokens.slice(index).join(' '), Object.assign(options, { indent: null }))
+      : undefined
   }
 
   return api

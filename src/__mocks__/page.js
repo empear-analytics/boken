@@ -5,10 +5,13 @@ export default function () {
 
     // Just return a paragraph with one word less.
     addParagraph: paragraph => {
-      const content = paragraph.content().split(' ').slice(1).join(' ').trim()
+      const content = paragraph.__test__.content().split(' ').slice(1).join(' ').trim()
       return content === ''
         ? undefined
-        : { content: () => content }
+        : { __test__: { content: () => content } }
+    },
+    addMarginNote: marginNote => {
+      document.body.innerHTML = marginNote.__test__.content()
     }
   }
 }
