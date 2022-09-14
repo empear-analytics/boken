@@ -1,6 +1,6 @@
-import Margin from './margins.js'
-import Page from './page.js'
-import StyleInjector from './style-injector.js'
+import Margin from './margins'
+import Page from './page'
+import StyleInjector from './style-injector'
 import Paragraph from './paragraph'
 import CLASS_NAMES from './class-names'
 
@@ -191,7 +191,7 @@ export default function (name) {
     footer: true
   }) => {
     // Add page.
-    _.pages.current = Page(api)
+    _.pages.current = Page(_)
     _.pages.all.push(_.pages.current)
 
     // Add header.
@@ -233,6 +233,10 @@ export default function (name) {
     } while (typeof paragraph !== 'undefined')
 
     return api
+  }
+
+  api.write.marginNote = () => {
+    return _.pages.current.addMarginNote()
   }
 
   /**

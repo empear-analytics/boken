@@ -1,8 +1,10 @@
+import Margins from '../src/margins'
 import Paragraph from '../src/paragraph'
 import Book from '../src/book'
 import Page from '../src/page'
 import './utils'
 
+jest.mock('../src/margins')
 jest.mock('../src/paragraph')
 jest.mock('../src/book')
 
@@ -52,7 +54,7 @@ describe('Page', () => {
 
   describe('addParagraph', () => {
     test('should add paragraph', () => {
-      expect(Page(Book('foo')).addParagraph(Paragraph('Foo bar')).text())
+      expect(Page(Book('foo')).addParagraph(Paragraph('Foo bar')).content())
         .toBe('bar')
     })
   })

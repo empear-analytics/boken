@@ -6,10 +6,15 @@ import StyleInjector from './style-injector'
  *
  * @class Paragraph
  * @memberof boken
- * @param {string} text The paragraph content.
+ * @param {string} content The paragraph content. Can be HTML formatted.
  * @param {string=} indent Size of the indent, if any.
  */
-export default function Paragraph (text, indent) {
+export default function Paragraph (content, indent) {
+  // TODO Pass page as the only parameter.
+  // TODO Build content with .content() and indent with .indent().
+  // TODO Calculate overflow right away and make it accessible via a method .overflow() which returns a paragraph.
+  // TODO Make sure an overflown paragraph can be added to a page in Page.
+
   // Add relevant style.
   StyleInjector.add('p', {
     padding: '3mm 0'
@@ -24,11 +29,11 @@ export default function Paragraph (text, indent) {
         margin: 0,
         'text-indent': indent || null
       },
-      html: text
+      html: content
     })
   }
 
-  // Public methods
+  // Public methods.
   const api = {}
 
   /**
@@ -44,11 +49,26 @@ export default function Paragraph (text, indent) {
     return api
   }
 
-  api.text = function text (text) {
-    if (typeof text === 'undefined') {
+  /**
+   * Sets the content of the paragraph.
+   *
+   * @method content
+   * @memberof boken.Paragraph
+   * @param {string} content The HTML content to set.
+   * @returns {Paragraph} Reference to the paragraph.
+   */
+  /**
+   * Returns the content of the paragraph.
+   *
+   * @method content
+   * @memberof boken.Paragraph
+   * @returns {string} The paragraph content.
+   */
+  api.content = content => {
+    if (typeof content === 'undefined') {
       return _.el.innerHTML
     }
-    _.el.innerHTML = text
+    _.el.innerHTML = content
     return api
   }
 

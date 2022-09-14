@@ -2,6 +2,8 @@ import create from './create.js'
 import toPixel from './to-pixel.js'
 import CLASS_NAMES from './class-names'
 import StyleInjector from './style-injector'
+import MarginNote from './margin-note'
+import Paragraph from './paragraph'
 
 /**
  * The page class.
@@ -44,7 +46,7 @@ export default function (book) {
   // Private members.
   const _ = (() => {
     // Page side.
-    const side = book.numberOfPages() % 2 === 0 ? 'left' : 'right'
+    const side = book.pages.all.length % 2 === 0 ? 'left' : 'right'
 
     // Page outer.
     const outer = document.body.appendChild(create({ classNames: [CLASS_NAMES.page.outer] }))
@@ -61,11 +63,12 @@ export default function (book) {
     const inner = contentWrapper.appendChild(create({ classNames: [CLASS_NAMES.page.inner] }))
 
     return {
+      side,
       outer,
       inner,
 
       // Current page margins.
-      margins: side === 'left' ? book.leftPageMargins() : book.rightPageMargins(),
+      margins: side === 'left' ? book.margins.leftPage : book.margins.rightPage,
 
       // Position of the caret.
       caret: {
@@ -85,11 +88,11 @@ export default function (book) {
      * @returns {Page} Reference to the current page.
      */
   api.addHeader = () => {
-    const header = book.header()
+    const header = book.header
     _.outer.appendChild(create({
       classNames: [CLASS_NAMES.header],
       html: header({
-        number: book.numberOfPages()
+        number: book.pages.all.length
       })
     }))
     return api
@@ -103,11 +106,11 @@ export default function (book) {
      * @returns {Page} Reference to the current page.
      */
   api.addFooter = () => {
-    const footer = book.footer()
+    const footer = book.footer
     _.outer.appendChild(create({
       classNames: [CLASS_NAMES.footer],
       html: footer({
-        number: book.numberOfPages()
+        number: book.pages.all.length
       })
     }))
     return api
@@ -128,7 +131,12 @@ export default function (book) {
 
     // Add paragraph to page and return any overflown paragraph.
     return paragraph.appendTo(_.inner)
-      .calculateOverflow(toPixel(_.margins.getHeight(book.height())))
+      .calculateOverflow(toPixel(_.margins.getHeight(book.height)))
+  }
+
+  api.addMarginNote = () => {
+    return MarginNote(_)
+      .side(_.side)
   }
 
   return api

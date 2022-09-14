@@ -5,12 +5,10 @@ export default function () {
 
     // Just return a paragraph with one word less.
     addParagraph: paragraph => {
-      const text = paragraph.text().split(' ').slice(1).join(' ').trim()
-      return text === ''
+      const content = paragraph.content().split(' ').slice(1).join(' ').trim()
+      return content === ''
         ? undefined
-        : {
-            text: () => text
-          }
+        : { content: () => content }
     }
   }
 }

@@ -25,9 +25,9 @@ You can use it in the browser and print manually or on the server side to genera
 
 # examples
 
-| URL                                                                                | description                        |
-|:-----------------------------------------------------------------------------------|:-----------------------------------|
-| [Simple book](https://empear-analytics.github.io/boken/examples/simple/index.html) | Simple book with a few paragraphs. |
+| URL                                                                                   | description                                   |
+|:--------------------------------------------------------------------------------------|:----------------------------------------------|
+| [Paragraphs](https://empear-analytics.github.io/boken/examples/paragraphs/index.html) | Simple example showing how to add paragraphs. |
 
 # build
 

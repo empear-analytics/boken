@@ -1,4 +1,3 @@
-import Page from '../src/page'
 import Book from '../src/book'
 
 jest.mock('../src/page')
@@ -35,7 +34,7 @@ describe('Book', () => {
     test('should set or return the current left page margins', () => {
       expect(Book('foo').leftPageMargins().toStyle())
         .toBe('30mm 30mm 30mm 30mm')
-      expect(Book('foo').leftPageMargins({left: 50, bottom: 20})
+      expect(Book('foo').leftPageMargins({ left: 50, bottom: 20 })
         .leftPageMargins().toStyle())
         .toBe('30mm 30mm 20mm 50mm')
     })
@@ -45,7 +44,7 @@ describe('Book', () => {
     test('should set or return the current right page margins', () => {
       expect(Book('foo').rightPageMargins().toStyle())
         .toBe('30mm 30mm 30mm 30mm')
-      expect(Book('foo').rightPageMargins({right: 50, top: 20})
+      expect(Book('foo').rightPageMargins({ right: 50, top: 20 })
         .rightPageMargins().toStyle())
         .toBe('20mm 50mm 30mm 30mm')
     })

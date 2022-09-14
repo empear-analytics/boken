@@ -6,13 +6,13 @@
  * @returns {HTMLDivElement} The created (but not yet appended) HTML element.
  */
 export default function (attributes) {
-  const div = document.createElement(attributes?.tag || 'div')
+  const el = document.createElement(attributes?.tag || 'div')
   if (attributes?.classNames) {
-    div.classList.add(...attributes.classNames)
+    el.classList.add(...attributes.classNames)
   }
-  div.innerHTML = attributes?.html || ''
+  el.innerHTML = attributes?.html || ''
   Object.entries(attributes?.style || {}).forEach(([name, value]) => {
-    div.style.setProperty(name, value)
+    el.style.setProperty(name, value)
   })
-  return div
+  return el
 }
