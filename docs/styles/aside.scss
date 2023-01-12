@@ -88,7 +88,8 @@ aside {
       display: block;
       cursor: pointer;
       margin-bottom: 10px;
-      font-size: 1.1em;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.9em;
 
       &:hover {
         color: $colorThemeMain;
@@ -119,16 +120,15 @@ aside {
           text-decoration: none;
           color: #999;
           font-family: 'Courier', monospace;
-          font-size: 0.8em;
-          padding: 4px 8px;
+          font-size: 0.55em;
+          padding: 5px 10px;
           border: none;
         }
 
         &:hover {
           background-color: #f5f5f5;
-          color: $colorThemeMain;
-          border-left: 1px solid $colorThemeMain;
-          padding-left: 9px;
+          color: #000;
+          border-left: 4px solid $colorThemeMain;
           margin-left: -1px;
         }
       }
