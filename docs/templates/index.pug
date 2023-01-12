@@ -24,27 +24,27 @@ html(lang="en")
                                 li.toc-entry(id="toc-" + member.index)
                                     a(href="#" + member.index) #{member.signature}
         main
-            h1 what
+            h1 What is boken?
             p A simple and flexible module that sets the styling of a webpage to resemble a sequence of A4 pages along
               |  with some convenience methods to add text figures and more.
 
-            h1 why
+            h1 Why should I care?
             p Generating PDFs programmatically is a nightmare. Not anymore: use HTML, CSS and Javascript to create
               |  beautiful books.
 
-            h1 how
+            h1 How can I use it?
             p You can create books in the browser for development and then print them manually or just generate the
               |  pages in node and use a headless browser such as puppeteer to print it as PDF.
 
-            h1 use in browser
+            h1 Use in browser
             pre.install
                 code.hljs !{install.browser}
 
-            h1 examples
+            h1 Examples
             ul
                 li A very simple page with a few paragraphs:
-                  |  [#[a(href="examples/simple/index.html") document]]
-                  |  [#[a(href="https://github.com/empear-analytics/boken/tree/main/docs/examples/simple") code]]
+                  |  [ #[a(href="examples/simple/index.html") document] ]
+                  |  [ #[a(href="https://github.com/empear-analytics/boken/tree/main/docs/examples/simple") code] ]
 
             h1 API
             each entry in api

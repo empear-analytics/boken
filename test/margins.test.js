@@ -13,7 +13,7 @@ describe('Margins', () => {
   describe('update', () => {
     test('should update margin style', () => {
       Margins('left')
-        .update({left: 10, right: 20, top: 40})
+        .update({ left: 10, right: 20, top: 40 })
       expect(document.getElementById('boken--style').textContent)
         .toBe('.boken--margins--side-left{width:180mm;height:227mm;margin:40mm 20mm 30mm 10mm}')
     })
