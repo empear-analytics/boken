@@ -33,20 +33,20 @@ describe('Book', () => {
 
   describe('leftPageMargins', () => {
     test('should set or return the current left page margins', () => {
-      expect(Book('foo').leftPageMargins().toStyle())
+      expect(Book('foo').margins.leftPage().toStyle())
         .toBe('30mm 30mm 30mm 30mm')
-      expect(Book('foo').leftPageMargins({left: 50, bottom: 20})
-        .leftPageMargins().toStyle())
+      expect(Book('foo').margins.leftPage({left: 50, bottom: 20})
+        .margins.leftPage().toStyle())
         .toBe('30mm 30mm 20mm 50mm')
     })
   })
 
   describe('rightPageMargins', () => {
     test('should set or return the current right page margins', () => {
-      expect(Book('foo').rightPageMargins().toStyle())
+      expect(Book('foo').margins.rightPage().toStyle())
         .toBe('30mm 30mm 30mm 30mm')
-      expect(Book('foo').rightPageMargins({right: 50, top: 20})
-        .rightPageMargins().toStyle())
+      expect(Book('foo').margins.rightPage({right: 50, top: 20})
+        .margins.rightPage().toStyle())
         .toBe('20mm 50mm 30mm 30mm')
     })
   })

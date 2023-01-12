@@ -19,13 +19,13 @@
 </head>
 <body></body>
 <script>
-    // Create book
+    // Create book.
     const book = boken.Book('Simple page')
         // Margins on left side pages: 6cm and 3cm.
-        .leftPageMargins({left: 60, right: 30})
+        .margins.leftPage({left: 60, right: 30})
 
         // Margins on right side pages: 3cm and 6cm.
-        .rightPageMargins({left: 30, right: 60})
+        .margins.rightPage({left: 30, right: 60})
 
         // Add page number to footer.
         .footer(({number}) => {

@@ -65,7 +65,7 @@ export default function (book) {
       inner,
 
       // Current page margins.
-      margins: side === 'left' ? book.leftPageMargins() : book.rightPageMargins(),
+      margins: side === 'left' ? book.margins.leftPage() : book.margins.rightPage(),
 
       // Position of the caret.
       caret: {
@@ -130,6 +130,8 @@ export default function (book) {
     return paragraph.appendTo(_.inner)
       .calculateOverflow(toPixel(_.margins.getHeight(book.height())))
   }
+
+  api._inner = () => _.inner
 
   return api
 }
