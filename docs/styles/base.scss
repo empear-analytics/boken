@@ -1,4 +1,6 @@
 // Base style: html, body and general style.
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@300&display=swap');
 @import "colors";
 
 
@@ -6,8 +8,8 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Baskerville', sans-serif;
-  font-size: 14px;
+  font-family: 'Spectral', serif;
+  font-size: 16px;
   line-height: 1.4em;
 }
 

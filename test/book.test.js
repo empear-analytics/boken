@@ -35,7 +35,7 @@ describe('Book', () => {
     test('should set or return the current left page margins', () => {
       expect(Book('foo').margins.leftPage().toStyle())
         .toBe('30mm 30mm 30mm 30mm')
-      expect(Book('foo').margins.leftPage({left: 50, bottom: 20})
+      expect(Book('foo').margins.leftPage({ left: 50, bottom: 20 })
         .margins.leftPage().toStyle())
         .toBe('30mm 30mm 20mm 50mm')
     })
@@ -45,7 +45,7 @@ describe('Book', () => {
     test('should set or return the current right page margins', () => {
       expect(Book('foo').margins.rightPage().toStyle())
         .toBe('30mm 30mm 30mm 30mm')
-      expect(Book('foo').margins.rightPage({right: 50, top: 20})
+      expect(Book('foo').margins.rightPage({ right: 50, top: 20 })
         .margins.rightPage().toStyle())
         .toBe('20mm 50mm 30mm 30mm')
     })
@@ -75,7 +75,6 @@ describe('Book', () => {
         .footer(() => '<div>FOOTER</div>')
         .addPage()
       expect(book.page(0).addHeader.mock.calls.length).toBe(1)
-
     })
   })
 

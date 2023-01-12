@@ -7,7 +7,6 @@ jest.mock('../src/paragraph')
 jest.mock('../src/book')
 
 describe('Page', () => {
-
   describe('Page', () => {
     test('should add page style for left page', () => {
       Page(Book('foo'))

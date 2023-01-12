@@ -28,7 +28,7 @@ export default function Paragraph (text, indent) {
     })
   }
 
-  // Public methods
+  // Public methods.
   const api = {}
 
   /**
@@ -59,6 +59,7 @@ export default function Paragraph (text, indent) {
    * @memberof boken.Paragraph
    * @param {number} innerHeight The current height to be used to determine overflow.
    * @returns {(Paragraph|undefined)} Paragraph containing the overflow if any, undefined otherwise.
+   * @ignore
    */
   api.calculateOverflow = innerHeight => {
     const tokens = _.el.innerHTML.split(' ')

@@ -10,7 +10,7 @@ describe('Paragraph', () => {
     })
   })
 
-  describe('appendTo',  () => {
+  describe('appendTo', () => {
     test('should append paragraph to an element', () => {
       Paragraph('Some text', '3mm').appendTo(document.body)
       expect(document.body.innerHTML).toBe('<p style="margin: 0px; text-indent: 3mm;">Some text</p>')
