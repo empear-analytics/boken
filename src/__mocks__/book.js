@@ -6,8 +6,10 @@ export default function () {
   return {
     addPage: () => numPages++,
     numberOfPages: () => numPages,
-    leftPageMargins: () => Margins(),
-    rightPageMargins: () => Margins(),
+    margins: {
+      leftPage: () => Margins(),
+      rightPage: () => Margins()
+    },
     height: () => 10,
     header: () => () => '<div>HEADER</div>',
     footer: () => () => '<div>FOOTER</div>'
