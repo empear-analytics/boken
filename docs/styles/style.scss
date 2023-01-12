@@ -2,8 +2,8 @@ thead tr th {
     font-weight: normal;
     text-align: left;
     font-variant: all-small-caps;
-    font-family: Montserrat, sans-serif;
-    color: #4b4b4b;
+    font-family: 'Robot Mono', monospace;
+    font-size: 1.3em;
 }
 
 tr {
@@ -12,25 +12,29 @@ tr {
 
 td {
     padding-top: 10px;
+
+    &:last-child {
+        width: 100%;
+    }
 }
 
-.param-type code,
-.return-type code {
-    display: inline-block;
-    margin: 0 4px 4px 0;
-}
+.param-name,
+.param-type,
+.return-type {
+    min-width: 100px;
 
-.param-type code:first-child {
-    margin-top: -10px;
-}
-
-.param-name {
-    width: 100px;
+    code {
+        display: inline-block;
+        margin: 0 4px 4px 0;
+    }
 }
 
 .param-type {
-    width: 100px;
     padding-right: 10px;
     clear: both;
     display: inline-block;
+
+    code:first-child {
+        margin-top: -10px;
+    }
 }
