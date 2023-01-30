@@ -214,11 +214,13 @@ export default function (name) {
    * @method write.p
    * @memberof boken.Book
    * @param {string} text The paragraph text to write in the book.
+   * @param {number} indent Indent size in mm.
    * @returns {Book} Reference to the book.
    */
-  api.write.p = text => {
+  api.write.p = (text, indent) => {
     // Create paragraph.
-    let paragraph = Paragraph(text, '5mm')
+    // TODO Unit test indent parameter.
+    let paragraph = Paragraph(text, (typeof indent === 'number' ? indent : 5) + 'mm')
 
     // If no pages created yet, add one with header and footer (assuming regular page).
     if (_.pages.all.length === 0) {
